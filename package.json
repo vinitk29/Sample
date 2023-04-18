@@ -1,11 +1,13 @@
 {
   "name": "reactproject",
   "version": "1.0.0",
+  "homepage": "https://vinitk29.github.io/sample",
   "description": "",
   "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open --hot",
+    "deploy": "gh-pages -d dist",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -29,6 +31,7 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.4",
     "babel-loader": "^9.1.2",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.1",
     "webpack": "^5.79.0",
     "webpack-cli": "^5.0.1",
