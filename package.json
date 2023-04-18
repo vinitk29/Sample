@@ -1,7 +1,7 @@
 {
   "name": "reactproject",
   "version": "1.0.0",
-  "homepage": "https://vinitk29.github.io/sample",
+  "homepage": "https://vinitk29.github.io/Sample/",
   "description": "",
   "main": "index.tsx",
   "scripts": {
@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fluentui/react": "^8.107.6",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.37",
