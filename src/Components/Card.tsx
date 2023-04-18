@@ -31,7 +31,7 @@ function Card() {
         </div>
         <div className="row">
           {user.map((data:any) => {
-            const isShow = value=="" || (data.name.first as string)?.toLowerCase().includes(value.toLowerCase()) || (data.name.second as string)?.toLowerCase().includes(value.toLowerCase());
+            const isShow = value=="" || (data.name.first as string)?.toLowerCase().includes(value.toLowerCase()) || (data.name.last as string)?.toLowerCase().includes(value.toLowerCase());
             return (
             <div className={isShow?"col-md-4 animated fadeIn":"hidden"} key={data.id.value}>
               <div className="card">
