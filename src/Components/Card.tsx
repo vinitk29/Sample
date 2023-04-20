@@ -2,6 +2,8 @@ import React ,{useState,useEffect} from 'react';
 import { SearchBox } from '@fluentui/react/lib/SearchBox';
 import './index.css';
 import { initializeIcons } from '@fluentui/react/lib/Icons';
+import Entity from './Entity';
+import { ICard } from './ICard';
 
 initializeIcons(/* optional base url */);
 
@@ -32,32 +34,18 @@ function Card() {
         <div className="row">
           {user.map((data:any) => {
             const isShow = value=="" || (data.name.first as string)?.toLowerCase().includes(value.toLowerCase()) || (data.name.last as string)?.toLowerCase().includes(value.toLowerCase());
+            const entityProps: ICard = {
+              isShow,
+              firstName: data.name.first,
+              lastName: data.name.last,
+              id: data.id.value,
+              city: data.location.city,
+              state: data.location.state,
+              phone: data.phone,
+              picture: data.picture.large
+            }
             return (
-            <div className={isShow?"col-md-4 animated fadeIn":"hidden"} key={data.id.value}>
-              <div className="card">
-                <div className="card-body">
-                  <div className="avatar">
-                    <img
-                      src={data.picture.large}
-                      className="card-img-top"
-                      alt=""
-                    />
-                  </div>
-                  <h5 className="card-title">
-                    {data.name.first +
-                      " " +
-                      data.name.last}
-                  </h5>
-                  <p className="card-text">
-                    {data.location.city +
-                      ", " +
-                      data.location.state}
-                    <br />
-                    <span className="phone">{data.phone}</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            <Entity {...entityProps}/>
           )})}
         </div>
     

@@ -8,10 +8,6 @@ module.exports = {
     },
 
     entry: './src/index.tsx',
-    output: {
-        filename: 'bundle.js',
-        path: path.join(__dirname, '/dist')
-    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html'

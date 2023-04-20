@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  Sample: 
+    image: sample-dev-i
+    build: 
+      dockerfile: Dockerfile.dev
+    container_name: sample-dev-c
+    volumes:
+      - .:/Sample
+      - node_modules:/Sample/node_modules/
+    ports:
+      - "8080:8080"
+    environment:
+      FLASK_DEBUG: "true"
+      WATCHPACK_POLLING: "true"
+
+volumes:
+  node_modules:
